@@ -1,0 +1,23 @@
+{
+  "name": "random-task-assigner-api",
+  "version": "1.0.0",
+  "description": "an API random task assigner",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igbominadeveloper/random-task-assigner-api.git"
+  },
+  "keywords": [
+    "task",
+    "assigner"
+  ],
+  "author": "Igbomiadeveloper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igbominadeveloper/random-task-assigner-api/issues"
+  },
+  "homepage": "https://github.com/igbominadeveloper/random-task-assigner-api#readme"
+}
