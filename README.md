@@ -28,6 +28,10 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## DB Design
+
+[click here](https://drive.google.com/file/d/1IStdCHi7kZTNHVwUTh6eO_LVfpdWj6P3/view?usp=sharing)
+
 ## Installation
 
 ```bash
