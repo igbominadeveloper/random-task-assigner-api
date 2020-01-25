@@ -13,9 +13,11 @@ describe('AppController', () => {
   });
 
   describe('getHello', () => {
-    it('should return "Hello World!"', () => {
+    it('should return "Welcome to Random Task Assigner V1!"', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getHello()).toBe('Hello World!');
+      expect(appController.getHello()).toBe(
+        'Welcome to Random Task Assigner V1!',
+      );
     });
   });
 });

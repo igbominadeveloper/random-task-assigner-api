@@ -1,24 +1,33 @@
-import * as request from 'supertest';
-import { Test } from '@nestjs/testing';
-import { AppModule } from './../src/app.module';
 import { INestApplication } from '@nestjs/common';
+import { Test } from '@nestjs/testing';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
-describe('AppController (e2e)', () => {
-  let app: INestApplication;
+import User from 'src/entities/user.entity';
+import { AppModule } from './../src/app.module';
 
-  beforeAll(async () => {
-    const moduleFixture = await Test.createTestingModule({
-      imports: [AppModule],
-    }).compile();
+import ormConfig from '../ormconfig.json';
 
-    app = moduleFixture.createNestApplication();
-    await app.init();
-  });
+let app: INestApplication;
+const config: object = {
+  ...ormConfig,
+  entities: [User],
+};
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
-  });
+beforeAll(async () => {
+  const moduleFixture = await Test.createTestingModule({
+    imports: [
+      AppModule,
+      TypeOrmModule.forRoot({
+        ...config,
+        database: 'random-task-assigner-test',
+      }),
+    ],
+  }).compile();
+
+  app = moduleFixture.createNestApplication();
+  await app.init();
+});
+
+afterAll(async () => {
+  await app.close();
 });
