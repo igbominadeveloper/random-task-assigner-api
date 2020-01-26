@@ -1,0 +1,8 @@
+{
+  "type": "mongodb",
+  "host": "localhost",
+  "port": 27017,
+  "database": "random-task-assigner",
+  "synchronize": true,
+  "useUnifiedTopology": true
+}
